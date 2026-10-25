@@ -1,0 +1,27 @@
+[
+  {
+    "file": "architectury-9.2.14-forge.jar",
+    "sha256": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+    "upstream": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar"
+  },
+  {
+    "file": "ftb-library-forge-2001.2.10.jar",
+    "sha256": "c721880edd4f3a78965a350b2f12c6fe05f74dba4037a2a08fd792f9cbb1db97",
+    "upstream": "https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge/files"
+  },
+  {
+    "file": "sdmshoprework-forge-1.20.1-6.11-pre.jar",
+    "sha256": "ccc891a716dc58259a0d4c128f39fd6cd9093ea4fe06268afb34d98786893844",
+    "upstream": "https://cdn.modrinth.com/data/dOrw4veV/versions/vHjGpgIr/sdmshoprework-forge-1.20.1-6.11-pre.jar"
+  },
+  {
+    "file": "sdm_economy-forge-1.20.1-1.7.2.jar",
+    "sha256": "fe19e3d20172e25612e5785f6ca193f7b589f27b903edda821ab4dced73c517c",
+    "upstream": "https://www.curseforge.com/minecraft/mc-mods/sdm-economy/files"
+  },
+  {
+    "file": "sdm_ui_lib-forge-1.20.1-1.8.3.jar",
+    "sha256": "77c46330599f61aba87999ff4cdbebd12d3ebe62e5cb5134a64ba8b303224af8",
+    "upstream": "https://cdn.modrinth.com/data/MdmRC4B5/versions/SqwJk0Bv/sdm_ui_lib-forge-1.20.1-1.8.3.jar"
+  }
+]

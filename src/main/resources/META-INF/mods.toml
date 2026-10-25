@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="AGPL-3.0-only"
+[[mods]]
+modId="sdmshopbulk"
+version="1.0.1"
+displayName="SDM Shop Bulk Drops"
+authors="PixelMC / Codex"
+description='''Compress only large SDM Shop purchases into owner-only, persistent cargo entities.'''
+[[dependencies.sdmshopbulk]]
+modId="forge"
+mandatory=true
+versionRange="[47.3.33,48)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.sdmshopbulk]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.sdmshopbulk]]
+modId="sdmshoprework"
+mandatory=true
+versionRange="[1.20.1-6.11-pre]"
+ordering="AFTER"
+side="BOTH"

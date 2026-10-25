@@ -1,0 +1,1 @@
+{"entity.sdmshopbulk.purchase_cargo":"Compressed shop cargo","message.sdmshopbulk.compressed":"Your purchased items have been compressed into cargo.","message.sdmshopbulk.failed":"Purchase delivery could not be completed safely. No items were delivered.","message.sdmshopbulk.invalid":"Invalid or overflowing quantity or price. Please reduce the quantity."}

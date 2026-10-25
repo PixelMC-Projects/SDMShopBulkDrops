@@ -1,0 +1,26 @@
+// Export prepared development launches so client and server do not compete for Gradle build locks.
+tasks.register('exportVisualLaunch') {
+    dependsOn 'prepareRunVisualClientCompile', 'prepareRunVisualServerCompile'
+    doLast {
+        ['Server', 'Client'].each { side ->
+            def launch = tasks.getByName('runVisual' + side)
+            def config = launch.runConfig.get()
+            def generator = launch.class.classLoader.loadClass('net.minecraftforge.gradle.common.util.runs.RunConfigGenerator')
+            def tokens = generator.configureTokensLazy(project, config, generator.mapModClassesToGradle(project, config),
+                    launch.minecraftArtifacts, launch.runtimeClasspathArtifacts)
+            def args = generator.getArgsStream(config, tokens, false).collect(java.util.stream.Collectors.toList())
+            def jvm = config.jvmArgs.collect { config.replace(tokens, it) }
+            if (config.client) jvm.addAll(launch.additionalClientArgs.get().collect { config.replace(tokens, it) })
+            def props = config.properties.collect { key, value -> "-D${key}=${config.replace(tokens, value)}".toString() }
+            def classpath = config.allSources.collectMany { it.runtimeClasspath.files.toList() }
+                    .unique().collect { it.absolutePath }.join(File.pathSeparator)
+            def command = [launch.javaLauncher.get().executablePath.asFile.absolutePath] + jvm + props + ['-cp', classpath, config.main] + args
+            def output = file("build/visual-launch/${side.toLowerCase()}.json")
+            output.parentFile.mkdirs()
+            def data = [commandLine: command, workingDirectory: config.workingDirectory,
+                        environment: config.environment.findAll { key, value -> key == 'MOD_CLASSES' }
+                                .collectEntries { key, value -> [(key): config.replace(tokens, value)] }]
+            output.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(data))
+        }
+    }
+}
